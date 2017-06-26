@@ -1,30 +1,13 @@
 const path = require('path');
 const redbird = require('redbird');
 
-const proxy = redbird({
-  port: 80,
-  ssl: {
-    port: 443,
-    redirect: true,
-  },
-  letsencrypt: {
-    path: path.join(__dirname, 'certs'),
-    port: 9999,
-  },
-});
+const proxy = redbird({ port: 80 });
 
 const routes = [
-  ['spncrwd.com', 'localhost:3000'],
+  ['spncrwd.com', '127.0.0.1:3000'],
+  ['outdoorstorage.spncrwd.com', '127.0.0.1:3001'],
+  ['test.spncrwd.com', '127.0.0.1:3002'],
+  ['test2.spncrwd.com', '127.0.0.1:3003'],
 ];
 
-routes.forEach(([from, to]) => {
-  proxy.register(from, to , {
-      ssl: {
-        letsencrypt: {
-          email: 'spencercwood@gmail.com',
-          production: true,
-        },
-      },
-    }
-  );
-});
+routes.forEach(([from, to]) => proxy.register(from, to));
