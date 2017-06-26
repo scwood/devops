@@ -1,4 +1,8 @@
 apps:
+  - name: reverse-proxy
+    cwd: /home/spencer/devops
+    script: reverseProxy.js
   - name: public
-    interpreter: http-server
-    cwd: /root/apps/public
+    cwd: /home/spencer/public
+    script: http-server
+    args: '-p 3000'

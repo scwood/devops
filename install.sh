@@ -14,5 +14,6 @@ sudo apt-get install -y build-essential
 mkdir ~/.npm-global
 npm config set prefix '~/.npm-global'
 echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.profile
+source ~/.profile
 
-npm install -g pm2 http-server
+npm install -g pm2 http-server redbird

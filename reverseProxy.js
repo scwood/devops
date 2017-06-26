@@ -14,24 +14,10 @@ const proxy = redbird({
 });
 
 const routes = [
-  ['201r.spncrwd.com', 'localhost:3000'],
-  ['lab2.462.spncrwd.com', 'localhost:3001'],
-  ['cities.201r.spncrwd.com', 'localhost:3002'],
-  ['act8.201r.spncrwd.com', 'localhost:3006'],
-  ['node.201r.spncrwd.com:3004', 'localhost:3004'],
-  ['act9.201r.spncrwd.com', 'localhost:3007'],
+  ['spncrwd.com', 'localhost:3000'],
 ];
 
-const sslRoutes = [
-  ['spncrwd.com', 'localhost:8080'],
-  ['oauth.462.spncrwd.com', 'localhost:3003'],
-  ['gossip.462.spncrwd.com', 'localhost:3005'],
-  ['gossip2.462.spncrwd.com', 'localhost:3008'],
-];
-
-routes.forEach(([from, to]) => proxy.register(from, to));
-
-sslRoutes.forEach(([from, to]) => {
+routes.forEach(([from, to]) => {
   proxy.register(from, to , {
       ssl: {
         letsencrypt: {
