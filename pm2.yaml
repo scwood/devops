@@ -1,11 +1,4 @@
 apps:
-  - name: reverse-proxy
-    cwd: /home/spencer/devops
-    script: reverseProxy.js
-  - name: public
-    cwd: /home/spencer/public
-    script: http-server
-    args: '-p 3000'
   - name: outdoor-storage
     cwd: /home/spencer/apps/outdoor-storage
     script: index.js
