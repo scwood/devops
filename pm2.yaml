@@ -2,3 +2,5 @@ apps:
   - name: public
     interpreter: http-server
     cwd: /root/apps/public
+  - name: reverse-proxy
+    script: ./reverseProxy.js
