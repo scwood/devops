@@ -16,5 +16,4 @@ npm config set prefix '~/.npm-global'
 echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.profile
 source ~/.profile
 
-npm install
-npm install -g pm2 http-server
+npm install -g pm2
