@@ -1,6 +1,6 @@
 apps:
   - name: outdoor-storage
-    cwd: /home/spencer/apps/outdoor-storage
+    cwd: /home/ubuntu/apps/outdoor-storage
     script: index.js
     env:
       PORT: 3001
